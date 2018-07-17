@@ -1,0 +1,40 @@
+<doctype html>
+<html>
+  <head>
+    <title>TitleBar Demo</title>
+  </head>
+  <body>
+    <div id="test"></div>
+    <h1>TitleBar Demo</h1>
+    <p>This is a demo for titlebar.</p>
+    <script>
+      const { remote } = require('electron');
+      const TitleBar = require('../lib/titlebar.js');
+      
+      let titlebar = new TitleBar({
+        title: 'Titlebar demo',
+        fullscreen: true
+      });
+      
+      titlebar.on('close', () => {
+        console.info('close');
+        remote.getCurrentWindow().close();
+      });
+
+      titlebar.on('maximize', () => {
+          console.info('maximize');
+          remote.getCurrentWindow().setFullScreen(true);
+      });
+
+      titlebar.on('unmaximize', () => {
+          console.info('unmaximize');
+          remote.getCurrentWindow().setFullScreen(false);
+      });
+
+      titlebar.on('minimize', () => {
+          console.info('minimize');
+          remote.getCurrentWindow().minimize();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+:root {
+  --background-color: #1273D7;
+  --color: #E8F2FD;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.titlebar.draggable {
+  -webkit-app-region: drag;
+}
+
+.titlebar {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+  .titlebar-title {
+    font-family: sans-serif;
+  }
+  .titlebar-controls {
+    display: flex;
+  }
+  .titlebar-controls div {
+    -webkit-app-region: no-drag;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px; height: 45px;
+    transition: background-color .2s;
+  }
+    .titlebar-controls div svg {
+      width: 10px;
+      height: 10px;
+      shape-rendering: crispEdges;
+    }
+    .titlebar-minimize {
+
+    }
+    .titlebar-resize {
+
+    }
+      .titlebar:not(.fullscreen) svg.maximize-svg {
+        display: none;
+      }
+      .titlebar.fullscreen svg.fullscreen-svg {
+        display: none;
+      }
+    .titlebar-close {
+
+    }
+      .titlebar-close svg polygon {
+        transition: fill .2s;
+      }
+
+.windows.titlebar {
+  background-color: var(--background-color);
+  color: var(--color);
+  line-height: 30px;
+  height:  30px;
+}
+.windows svg {
+  fill: var(--color);
+}
