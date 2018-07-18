@@ -6,7 +6,10 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+}
+
+body:not(.window-focus) #titlebar-container {
+  filter: grayscale(100%) opacity(.6);
 }
 
 .titlebar.draggable {
@@ -14,6 +17,7 @@ body {
 }
 
 .titlebar {
+  position: fixed;
   width: 100vw;
   height: 40px;
   display: flex;
