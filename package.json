@@ -1,6 +1,6 @@
 {
   "name": "titlebar-electron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A titlebar for Electron on MacOS Windows & Linux",
   "main": "./lib/titlebar.js",
   "repository": "git@github.com:Toinane/titlebar-electron.git",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "electron": "^2.0.5"
+    "electron": "^7.1.1"
   },
   "scripts": {
     "start": "electron demo/main.js"
